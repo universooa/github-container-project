@@ -4,7 +4,6 @@
     <RouterLink to="/">Container Home</RouterLink>
     <RouterLink to="/about">Container About</RouterLink>
     <RouterLink to="/repository">Repository</RouterLink>
-    <RouterLink to="/repository/repositories">Repo Repository</RouterLink>
   </nav>
 </template>
 
