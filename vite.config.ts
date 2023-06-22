@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import federation from "@originjs/vite-plugin-federation";
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
 
@@ -14,7 +15,7 @@ export default defineConfig({
       remotes:{
         repository_app: "http://localhost:5174/assets/remoteEntry.js"
       },
-      shared:['vue','pinia']
+      shared: ['vue','pinia'],
     })
   ],
   resolve: {
@@ -25,6 +26,7 @@ export default defineConfig({
   build: {
     target:'esnext',
     minify: false,
+
   },
   preview:{
     host:'localhost',

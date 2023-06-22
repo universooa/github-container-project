@@ -1,6 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue'
-
+import {getRemoteRoutes} from "@/utils/router-util";
+const RepoContentRoutes=()=>import('repository_app/RepoRoutes')
+const remoteMaestroRoutes: Array<RouteRecordRaw> = await getRemoteRoutes(
+    RepoContentRoutes()
+);
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -23,9 +28,14 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('repository_app/RepoContent')
-    }
+      component: () => import('repository_app/RepoContent'),
+      children:[...remoteMaestroRoutes]
+
+    },
+
   ]
 })
+
+console.log(router.getRoutes())
 
 export default router
