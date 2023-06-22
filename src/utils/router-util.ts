@@ -7,7 +7,6 @@ export async function getRemoteRoutes(
     // await 키워드는 피연산자(operand)의 값을 반환. 피연산자가 Promise 객체이면 then 메서드를 호출해 얻은 값을 반환.
 
     remoteRoutes = (await RemoteRoutes)?.default?.options?.routes;
-    console.log(remoteRoutes)
     return remoteRoutes;
   } catch (e) {
     console.error(e);
