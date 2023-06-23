@@ -3,7 +3,7 @@
   <nav>
     <RouterLink to="/">Container Home</RouterLink>
     <RouterLink to="/about">Container About</RouterLink>
-    <RouterLink to="/repository">Repository</RouterLink>
+    <RouterLink to="/repository/overview">Repository</RouterLink>
   </nav>
 </template>
 
